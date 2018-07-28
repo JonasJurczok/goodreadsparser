@@ -1,7 +1,7 @@
-package org.linesofcode.kvparser.scanner;
+package org.linesofcode.goodreadsparser.scanner;
 
-import org.linesofcode.kvparser.Book;
-import org.linesofcode.kvparser.Context;
+import org.linesofcode.goodreadsparser.Book;
+import org.linesofcode.goodreadsparser.Context;
 
 public class NewBookScanner implements Scanner {
 	@Override

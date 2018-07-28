@@ -1,4 +1,4 @@
-package org.linesofcode.kvparser;
+package org.linesofcode.goodreadsparser;
 
 public class Book {
 

@@ -1,10 +1,10 @@
-package org.linesofcode.kvparser;
+package org.linesofcode.goodreadsparser;
 
-import org.linesofcode.kvparser.scanner.LanguageScanner;
-import org.linesofcode.kvparser.scanner.NewBookScanner;
-import org.linesofcode.kvparser.scanner.RatingScanner;
-import org.linesofcode.kvparser.scanner.Scanner;
-import org.linesofcode.kvparser.scanner.TypeScanner;
+import org.linesofcode.goodreadsparser.scanner.LanguageScanner;
+import org.linesofcode.goodreadsparser.scanner.NewBookScanner;
+import org.linesofcode.goodreadsparser.scanner.RatingScanner;
+import org.linesofcode.goodreadsparser.scanner.Scanner;
+import org.linesofcode.goodreadsparser.scanner.TypeScanner;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -38,7 +38,7 @@ public class Main {
 		scanners.add(new LanguageScanner());
 		scanners.add(new RatingScanner());
 
-		BufferedReader in = testReader();
+		BufferedReader in = liveReader();
 
 		Context context = new Context(in);
 		while (context.next()) {

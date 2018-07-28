@@ -1,6 +1,6 @@
-package org.linesofcode.kvparser.scanner;
+package org.linesofcode.goodreadsparser.scanner;
 
-import org.linesofcode.kvparser.Context;
+import org.linesofcode.goodreadsparser.Context;
 
 public class TypeScanner implements Scanner {
 	@Override
