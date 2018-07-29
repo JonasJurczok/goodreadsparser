@@ -1,10 +1,10 @@
-package org.linesofcode.goodreadsparser;
+package org.linesofcode.goodreadsscraper;
 
-import org.linesofcode.goodreadsparser.scanner.LanguageScanner;
-import org.linesofcode.goodreadsparser.scanner.NewBookScanner;
-import org.linesofcode.goodreadsparser.scanner.RatingScanner;
-import org.linesofcode.goodreadsparser.scanner.Scanner;
-import org.linesofcode.goodreadsparser.scanner.TypeScanner;
+import org.linesofcode.goodreadsscraper.scanner.LanguageScanner;
+import org.linesofcode.goodreadsscraper.scanner.NewBookScanner;
+import org.linesofcode.goodreadsscraper.scanner.RatingScanner;
+import org.linesofcode.goodreadsscraper.scanner.Scanner;
+import org.linesofcode.goodreadsscraper.scanner.TypeScanner;
 
 import java.io.BufferedReader;
 import java.io.File;

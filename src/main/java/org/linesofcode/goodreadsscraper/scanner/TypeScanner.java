@@ -1,6 +1,6 @@
-package org.linesofcode.goodreadsparser.scanner;
+package org.linesofcode.goodreadsscraper.scanner;
 
-import org.linesofcode.goodreadsparser.Context;
+import org.linesofcode.goodreadsscraper.Context;
 
 public class TypeScanner implements Scanner {
 	@Override
