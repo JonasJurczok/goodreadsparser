@@ -24,7 +24,7 @@ public class Scraper {
 		scanners = new ArrayList<>();
 		scanners.add(new TitleScanner());
 		scanners.add(new NewBookScanner());
-		scanners.add(new TypeScanner(Paths.get("types.csv")));
+		scanners.add(new TypeScanner(Paths.get("types.txt")));
 		scanners.add(new LanguageScanner());
 		scanners.add(new RatingScanner());
 	}

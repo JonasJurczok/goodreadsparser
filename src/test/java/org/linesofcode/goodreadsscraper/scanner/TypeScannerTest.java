@@ -9,7 +9,7 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 public class TypeScannerTest {
-	private final TypeScanner scanner = new TypeScanner(Paths.get("src/test/resources/types.csv"));
+	private final TypeScanner scanner = new TypeScanner(Paths.get("src/test/resources/types.txt"));
 
 	@Test
 	public void scannerShouldBeInitializedCorrectly() {

@@ -19,7 +19,7 @@ import static org.mockito.Mockito.when;
 @RunWith(Parameterized.class)
 public class TypeScannerMatchingTest {
 
-	private final TypeScanner scanner = new TypeScanner(Paths.get("src/test/resources/types.csv"));
+	private final TypeScanner scanner = new TypeScanner(Paths.get("src/test/resources/types.txt"));
 
 	private String line;
 	private String expectedKeyword;
