@@ -2,22 +2,21 @@ package org.linesofcode.goodreadsscraper.scanner;
 
 import org.junit.Test;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.nio.file.Paths;
+import java.util.List;
+
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
 public class TypeScannerTest {
+	private final TypeScanner scanner = new TypeScanner(Paths.get("src/test/resources/types.csv"));
 
 	@Test
-	public void unabridgedAudioShouldBeDetectedCorrectly() {
-
-	}
-
-
-	private static BufferedReader testReader() throws FileNotFoundException {
-		final String urlString = "src/main/resources/input.html";
-
-		return new BufferedReader(new FileReader(new File(urlString)));
+	public void scannerShouldBeInitializedCorrectly() {
+		List<String> types = scanner.getTypes();
+		assertThat(types.size(), is(3));
+		assertThat(types.contains("Paperback"), is(true));
+		assertThat(types.contains("Audio CD"), is(true));
+		assertThat(types.contains("Kindle Edition"), is(true));
 	}
 }

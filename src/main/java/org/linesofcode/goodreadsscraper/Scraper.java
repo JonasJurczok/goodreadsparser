@@ -11,6 +11,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,7 +24,7 @@ public class Scraper {
 		scanners = new ArrayList<>();
 		scanners.add(new TitleScanner());
 		scanners.add(new NewBookScanner());
-		scanners.add(new TypeScanner());
+		scanners.add(new TypeScanner(Paths.get("types.csv")));
 		scanners.add(new LanguageScanner());
 		scanners.add(new RatingScanner());
 	}
