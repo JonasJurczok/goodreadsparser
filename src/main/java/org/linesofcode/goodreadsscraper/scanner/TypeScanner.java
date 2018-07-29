@@ -10,7 +10,7 @@ public class TypeScanner implements Scanner {
 		}
 
 		String line = context.getLine();
-		return line.contains(" pages") || line.contains("Audiobook") || line.contains("Audio CD") || line.contains("Audible Audio");
+		return line.contains("Paperback") || line.contains("Audiobook") || line.contains("Audio CD") || line.contains("Audible Audio");
 	}
 
 	@Override
@@ -21,9 +21,11 @@ public class TypeScanner implements Scanner {
 		if (line.contains(",")) {
 			type = line.substring(0, line.lastIndexOf(",")).trim();
 			while (type.contains(",")) {
-				type = type.substring(type.indexOf(",") + 1);
+				type = type.substring(type.indexOf(",") + 1).trim();
 			}
 		}
 		context.getBook().setType(type);
+
+		System.out.println(String.format("Found type %s.", type));
 	}
 }

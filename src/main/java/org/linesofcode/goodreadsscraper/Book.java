@@ -1,12 +1,24 @@
 package org.linesofcode.goodreadsscraper;
 
+import com.opencsv.bean.CsvBindByPosition;
+
 public class Book {
 
+	@CsvBindByPosition(position = 0)
 	private String title;
+
+	@CsvBindByPosition(position = 1)
 	private String type;
-	private String language;
-	private Double averageRating;
+
+	@CsvBindByPosition(position = 2)
 	private Integer ratings;
+
+	@CsvBindByPosition(position = 3)
+	private Double averageRating;
+
+	@CsvBindByPosition(position = 4)
+	private String language;
+
 
 	public Book() {
 		this("");

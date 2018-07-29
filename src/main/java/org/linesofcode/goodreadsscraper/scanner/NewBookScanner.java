@@ -11,8 +11,7 @@ public class NewBookScanner implements Scanner {
 
 	@Override
 	public void apply(final Context context) {
-		final String line = context.getLine();
-		Book book = new Book(line.substring(line.indexOf(">") + 1, line.lastIndexOf("<")));
-		context.add(book);
+		System.out.println("Found new book with title " + context.getTitle());
+		context.add(new Book());
 	}
 }

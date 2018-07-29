@@ -1,5 +1,6 @@
 package org.linesofcode.goodreadsscraper.scanner;
 
+import org.linesofcode.goodreadsscraper.Book;
 import org.linesofcode.goodreadsscraper.Context;
 
 public class RatingScanner implements Scanner {
@@ -17,7 +18,8 @@ public class RatingScanner implements Scanner {
 		context.jump(3);
 
 		Double avgRating = Double.valueOf(context.getLine().trim());
-		context.getBook().setAverageRating(avgRating);
+		Book book = context.getBook();
+		book.setAverageRating(avgRating);
 
 		context.jump(2);
 
@@ -28,6 +30,8 @@ public class RatingScanner implements Scanner {
 			.replace(",", "")
 			.trim();
 
-		context.getBook().setRatings(Integer.valueOf(ratings));
+		book.setRatings(Integer.valueOf(ratings));
+
+		System.out.println(String.format("Found %d ratings with average of %f", book.getRatings(), book.getAverageRating()));
 	}
 }

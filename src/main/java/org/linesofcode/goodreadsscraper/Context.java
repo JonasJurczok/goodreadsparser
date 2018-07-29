@@ -9,6 +9,7 @@ public class Context {
 
 	private final BufferedReader reader;
 	private String line;
+	private String title;
 	private List<Book> books = new ArrayList<>();
 	private Book book;
 
@@ -33,6 +34,7 @@ public class Context {
 	}
 
 	public void add(Book book) {
+		book.setTitle(getTitle());
 		books.add(book);
 		this.book = book;
 	}
@@ -47,5 +49,13 @@ public class Context {
 
 	public Book getBook() {
 		return book;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
 }

@@ -13,6 +13,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,7 +26,7 @@ public class Main {
 		/**
 		 * TODO;
 		 * - input als Liste Titel -> URL
-		 * - Output als CSV
+		 * - konfigurierbarer Typfilter
 		 * - README
 		 *
 		 * - Tests
@@ -31,41 +34,16 @@ public class Main {
 		 * - input/output konfigurierbar
 		 * - URL Suche?
 		 */
+		Writer writer = new Writer();
+		Scraper scraper = new Scraper();
 
-		final List<Scanner> scanners = new ArrayList<>();
-		scanners.add(new NewBookScanner());
-		scanners.add(new TypeScanner());
-		scanners.add(new LanguageScanner());
-		scanners.add(new RatingScanner());
-
-		BufferedReader in = liveReader();
-
-		Context context = new Context(in);
-		while (context.next()) {
-
-			for (Scanner scanner : scanners) {
-				if (scanner.isApplicable(context)) {
-					scanner.apply(context);
-				}
-			}
-			//System.out.println(context.getLine());
+		try {
+			Files.lines(Paths.get("input.csv"))
+				.map(scraper::scrape)
+				.forEach(writer::write);
+		} catch (NoSuchFileException e) {
+			System.out.println("Could not find input file input.csv. Please create one and put every URL in a new line.");
 		}
-
-		in.close();
-
-		System.out.println("Found books:");
-		context.getBooks().forEach(System.out::println);
 	}
 
-	private static BufferedReader testReader() throws FileNotFoundException {
-		final String urlString = "src/main/resources/input.html";
-
-		return new BufferedReader(new FileReader(new File(urlString)));
-	}
-
-	private static BufferedReader liveReader() throws IOException {
-		final String urlString = "https://www.goodreads.com/work/editions/5431515-the-first-days?expanded=true";
-		URL url = new URL(urlString);
-		return new BufferedReader(new InputStreamReader(url.openStream()));
-	}
 }

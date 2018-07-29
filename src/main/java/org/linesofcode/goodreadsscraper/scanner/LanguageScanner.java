@@ -15,5 +15,6 @@ public class LanguageScanner implements Scanner {
 	public void apply(Context context) {
 		context.jump(3);
 		context.getBook().setLanguage(context.getLine().trim());
+		System.out.println(String.format("Found language %s", context.getBook().getLanguage()));
 	}
 }
