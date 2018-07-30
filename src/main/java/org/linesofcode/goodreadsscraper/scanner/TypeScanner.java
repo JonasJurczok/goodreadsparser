@@ -29,7 +29,7 @@ public class TypeScanner implements Scanner {
 
 		String line = context.getLine();
 		for (String type : types) {
-			if (line.contains(type)) {
+			if (contains(line, type)) {
 				return true;
 			}
 		}
@@ -42,7 +42,7 @@ public class TypeScanner implements Scanner {
 
 		String foundType = null;
 		for (String type : types) {
-			if (line.contains(type)) {
+			if (contains(line, type)) {
 				foundType = type;
 				break;
 			}
@@ -53,12 +53,17 @@ public class TypeScanner implements Scanner {
 		}
 
 		for (String part : line.split(",")) {
-			if (part.contains(foundType)) {
+			if (contains(part, foundType)) {
 				context.getBook().setType(part.trim());
 				System.out.println(String.format("Found type %s.", part));
 				break;
 			}
 		}
+	}
+
+	private boolean contains(String haystack, String needle) {
+		int index = haystack.indexOf(needle);
+		return (index >= 0 && (index == 0 || haystack.charAt(index - 1) == ' '));
 	}
 
 	public List<String> getTypes() {
