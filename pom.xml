@@ -49,6 +49,8 @@
                     </execution>
                 </executions>
                 <configuration>
+                    <finalName>godreadsscraper</finalName>
+                    <appendAssemblyId>false</appendAssemblyId>
                     <archive>
                         <manifest>
                             <mainClass>org.linesofcode.goodreadsscraper.Main</mainClass>

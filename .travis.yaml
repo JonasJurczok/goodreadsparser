@@ -1,0 +1,20 @@
+language: java
+
+sudo: false
+
+jdk:
+  - oraclejdk8
+
+cache:
+  directories:
+    - $HOME/.m2
+
+script: mvn clean verify
+
+deploy:
+  provider: releases
+  api_key: "${TOKEN}"
+  file: "target/goodreadsscraper.jar"
+  skip_cleanup: true
+  on:
+    tags: true
