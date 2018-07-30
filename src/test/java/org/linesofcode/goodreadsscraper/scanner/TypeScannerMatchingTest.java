@@ -35,11 +35,12 @@ public class TypeScannerMatchingTest {
 			{"Paperback", "Paperback"},
 			{"Paperback, 341 pages", "Paperback"},
 			{"Unedited, Paperback, 341 pages", "Paperback"},
-			{"Uneidted   ,     Paperback    , 222 pages", "Paperback"},
+			{"Unedited   ,     Paperback    , 222 pages", "Paperback"},
 			{"Unedited, Paperback", "Paperback"},
 			{"341 pages", ""},
 			{"Unedited Paperback", "Unedited Paperback"},
-			{"Unedited Paperback, 333 pages", "Unedited Paperback"}
+			{"Unedited Paperback, 333 pages", "Unedited Paperback"},
+			{"/facebook/login_an", ""}
 		});
 	}
 

@@ -16,7 +16,7 @@ public class TypeScannerTest {
 		List<String> types = scanner.getTypes();
 		assertThat(types.size(), is(3));
 		assertThat(types.contains("Paperback"), is(true));
-		assertThat(types.contains("Audio CD"), is(true));
+		assertThat(types.contains("ebook"), is(true));
 		assertThat(types.contains("Kindle Edition"), is(true));
 	}
 }
