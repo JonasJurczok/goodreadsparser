@@ -1,4 +1,4 @@
-Paperback
-ebook
-Audio
-CD
+Paperback, "print"
+ebook, "ebook"
+Audio, "other"
+CD, "other"

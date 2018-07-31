@@ -11,12 +11,15 @@ public class Book {
 	private String type;
 
 	@CsvBindByPosition(position = 2)
-	private Integer ratings;
+	private String typeDisplayName = "other";
 
 	@CsvBindByPosition(position = 3)
-	private Double averageRating;
+	private Integer ratings;
 
 	@CsvBindByPosition(position = 4)
+	private Double averageRating;
+
+	@CsvBindByPosition(position = 5)
 	private String language;
 
 
@@ -68,8 +71,23 @@ public class Book {
 		return ratings;
 	}
 
+	public void setTypeDisplayName(String typeDisplayName) {
+		this.typeDisplayName = typeDisplayName;
+	}
+
+	public String getTypeDisplayName() {
+		return typeDisplayName;
+	}
+
 	@Override
 	public String toString() {
-		return title + ", " + type + ", " + language + ", " + averageRating + ", " + ratings;
+		return "Book{" +
+			"title='" + title + '\'' +
+			", type='" + type + '\'' +
+			", ratings=" + ratings +
+			", averageRating=" + averageRating +
+			", language='" + language + '\'' +
+			", typeDisplayName='" + typeDisplayName + '\'' +
+			'}';
 	}
 }
