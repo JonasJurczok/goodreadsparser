@@ -28,6 +28,11 @@ public class TypeScanner implements Scanner {
 		}
 
 		String line = context.getLine();
+
+		if (line.contains("bookTitle")) {
+			return false;
+		}
+
 		for (String type : types) {
 			if (contains(line, type)) {
 				return true;
