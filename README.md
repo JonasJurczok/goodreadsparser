@@ -2,6 +2,8 @@
 A very simple scraper for goodreads edition details.
 
 [![Travis (.org)](https://img.shields.io/travis/JonasJurczok/goodreadsscraper.svg)](https://travis-ci.org/JonasJurczok/goodreadsscraper)
+[![Github All Releases](https://img.shields.io/github/downloads/JonasJurczok/goodreadsscraper/total.svg)](https://github.com/JonasJurczok/goodreadsscraper/releases)
+[![GitHub release](https://img.shields.io/github/release/JonasJurczok/goodreadsscraper.svg)](https://github.com/JonasJurczok/goodreadsscraper/releases)
 
 ### Motivation
 I wrote this scraper to help my sister with her bachelors thesis. It requires her to
