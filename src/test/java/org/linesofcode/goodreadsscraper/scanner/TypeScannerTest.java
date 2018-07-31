@@ -1,6 +1,7 @@
 package org.linesofcode.goodreadsscraper.scanner;
 
 import org.junit.Test;
+import org.linesofcode.goodreadsscraper.Type;
 
 import java.nio.file.Paths;
 import java.util.List;
@@ -13,11 +14,7 @@ public class TypeScannerTest {
 
 	@Test
 	public void scannerShouldBeInitializedCorrectly() {
-		List<String> types = scanner.getTypes();
+		List<Type> types = scanner.getTypes();
 		assertThat(types.size(), is(4));
-		assertThat(types.contains("Paperback"), is(true));
-		assertThat(types.contains("ebook"), is(true));
-		assertThat(types.contains("Audio"), is(true));
-		assertThat(types.contains("CD"), is(true));
 	}
 }

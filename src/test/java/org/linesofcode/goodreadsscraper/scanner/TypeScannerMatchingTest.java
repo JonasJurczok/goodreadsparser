@@ -10,7 +10,6 @@ import org.mockito.Mockito;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -23,27 +22,29 @@ public class TypeScannerMatchingTest {
 
 	private String line;
 	private String expectedKeyword;
+	private String expectedDisplayName;
 
-	public TypeScannerMatchingTest(String line, String expectedKeyword) {
+	public TypeScannerMatchingTest(String line, String expectedKeyword, String expectedDisplayName) {
 		this.line = line;
 		this.expectedKeyword = expectedKeyword;
+		this.expectedDisplayName = expectedDisplayName;
 	}
 
 	@Parameterized.Parameters
 	public static Collection<Object[]> data() {
 		return Arrays.asList(new Object[][]{
-			{"Paperback", "Paperback"},
-			{"Paperback, 341 pages", "Paperback"},
-			{"Unedited, Paperback, 341 pages", "Paperback"},
-			{"Unedited   ,     Paperback    , 222 pages", "Paperback"},
-			{"Unedited, Paperback", "Paperback"},
-			{"341 pages", ""},
-			{"Unedited Paperback", "Unedited Paperback"},
-			{"Unedited Paperback, 333 pages", "Unedited Paperback"},
-			{"/facebook/login_an", ""},
-			{"Audiobook, 3 pages", "Audiobook"},
-			{"CD-ROM, 3 pages", "CD-ROM"},
-			{"bookTitle Paperback, 3 pages", ""}
+			{"Paperback", "Paperback", "print"},
+			{"Paperback, 341 pages", "Paperback", "print"},
+			{"Unedited, Paperback, 341 pages", "Paperback", "print"},
+			{"Unedited   ,     Paperback    , 222 pages", "Paperback", "print"},
+			{"Unedited, Paperback", "Paperback", "print"},
+			{"341 pages", "", ""},
+			{"Unedited Paperback", "Unedited Paperback", "print"},
+			{"Unedited Paperback, 333 pages", "Unedited Paperback", "print"},
+			{"/facebook/login_an", "", ""},
+			{"Audiobook, 3 pages", "Audiobook", "other"},
+			{"CD-ROM, 3 pages", "CD-ROM", "other"},
+			{"bookTitle Paperback, 3 pages", "", ""}
 		});
 	}
 
@@ -59,6 +60,7 @@ public class TypeScannerMatchingTest {
 		if (applicable) {
 			scanner.apply(context);
 			assertThat(book.getType(), is(expectedKeyword));
+			assertThat(book.getTypeDisplayName(), is(expectedDisplayName));
 		}
 	}
 }
