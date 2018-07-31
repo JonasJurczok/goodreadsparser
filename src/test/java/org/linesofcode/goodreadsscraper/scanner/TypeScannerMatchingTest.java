@@ -40,7 +40,9 @@ public class TypeScannerMatchingTest {
 			{"341 pages", ""},
 			{"Unedited Paperback", "Unedited Paperback"},
 			{"Unedited Paperback, 333 pages", "Unedited Paperback"},
-			{"/facebook/login_an", ""}
+			{"/facebook/login_an", ""},
+			{"Audiobook, 3 pages", "Audiobook"},
+			{"CD-ROM, 3 pages", "CD-ROM"}
 		});
 	}
 
