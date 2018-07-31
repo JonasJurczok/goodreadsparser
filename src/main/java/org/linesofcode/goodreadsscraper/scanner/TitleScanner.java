@@ -17,7 +17,7 @@ public class TitleScanner implements Scanner {
 		context.jump(1);
 
 		String title = context.getLine().replace("Editions of ", "");
-		title = title.substring(0, title.indexOf("by"));
+		title = title.substring(0, title.indexOf("by")).trim();
 		context.setTitle(title);
 
 		System.out.println(String.format("Found title %s", title));

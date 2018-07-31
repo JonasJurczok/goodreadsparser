@@ -1,3 +1,4 @@
 Paperback
 ebook
-Kindle Edition
+Audio
+CD

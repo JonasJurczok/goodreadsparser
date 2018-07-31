@@ -26,5 +26,4 @@ public class Main {
 			System.out.println("Could not find input file input.csv. Please create one and put every URL in a new line.");
 		}
 	}
-
 }

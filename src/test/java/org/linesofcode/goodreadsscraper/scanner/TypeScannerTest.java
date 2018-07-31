@@ -14,9 +14,10 @@ public class TypeScannerTest {
 	@Test
 	public void scannerShouldBeInitializedCorrectly() {
 		List<String> types = scanner.getTypes();
-		assertThat(types.size(), is(3));
+		assertThat(types.size(), is(4));
 		assertThat(types.contains("Paperback"), is(true));
 		assertThat(types.contains("ebook"), is(true));
-		assertThat(types.contains("Kindle Edition"), is(true));
+		assertThat(types.contains("Audio"), is(true));
+		assertThat(types.contains("CD"), is(true));
 	}
 }
